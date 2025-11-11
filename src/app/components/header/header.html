@@ -1,0 +1,25 @@
+<nav class="header-nav">
+    
+    <button class="hamburger" aria-label="Open menu" (click)="updateMenu()" [attr.aria-expanded]="isMenuOpen()">
+        &#9776; <!-- Hamburger icon -->
+    </button>
+
+    <div class="logo">Louis-David DUMAN</div>
+
+    <ul class="nav-links" [class.open]="isMenuOpen()">
+       <a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">HOME</a>
+       <a routerLink="/engineering" routerLinkActive="active" (click)="closeMenu()">COURSES</a>
+       <a routerLink="/mobility" routerLinkActive="active" (click)="closeMenu()">MOBILITY</a>
+       <a routerLink="/sustainability" routerLinkActive="active" (click)="closeMenu()">ENGAGEMENT</a>
+       <a routerLink="/activities" routerLinkActive="active" (click)="closeMenu()">ACTIVITIES</a>
+       <a routerLink="/career" routerLinkActive="active" (click)="closeMenu()">CAREER</a>
+    </ul>
+
+   <div class="overlay"
+     *ngIf="isMenuOpen()"
+     (click)="updateMenu()"
+     role="button"
+     tabindex="0"
+     aria-label="Close menu"></div>
+
+</nav>

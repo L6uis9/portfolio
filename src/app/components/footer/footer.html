@@ -1,1 +1,25 @@
-<p>footer works!</p>
+<footer>
+
+    <div class="footer-content">
+        <div class="footer-section">     
+            <ng-container *ngFor="let detail of details">
+                <a [href]="detail.href" target="_blank" rel="noopener">
+                    <strong style="white-space: nowrap;">{{ detail.label }} :</strong>
+                    <span class="detail-value">{{ detail.value }}</span>
+                </a>
+            </ng-container>
+        </div>
+
+
+        <div class="footer-section">
+            <ng-container *ngFor="let icon of icons">
+                <a [href]="icon.url" target="_blank" rel="noopener">
+                    <img [src]="icon.imgPath" [alt]="icon.name" class="icon-footer" />
+                    <span class="icon-name">{{ icon.name }}</span>
+                </a>
+            </ng-container>
+        </div>
+    </div>
+    <div class="credits">© 2025 by Louis-David Duman</div>
+
+</footer>

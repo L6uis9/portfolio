@@ -1,0 +1,34 @@
+<div class="media-card" [class.images-right]="imagesRight">
+  <!-- TEXTE -->
+  <div class="media-text">
+    <h3>{{ title }}</h3>
+    <p>{{ text }}</p>
+  </div>
+
+  <!-- IMAGES -->
+  <div class="media-images" [ngClass]="'count-' + pictures.length">
+    <div
+      class="image-wrapper"
+      *ngFor="let img of pictures; let i = index"
+      (click)="openImage(img)"
+      role="button"
+      tabindex="0"
+      (keydown.enter)="openImage(img)"
+    >
+      <img [src]="img" alt="{{ title }} image {{ i + 1 }}" />
+    </div>
+  </div>
+
+  <!-- MODAL APERCU -->
+  <div class="image-modal" *ngIf="selectedImage" (click)="closeImage()">
+    <img class="modal-img" [src]="selectedImage" alt="Aperçu" />
+    <button
+      class="close-btn"
+      (click)="closeImage(); $event.stopPropagation();"
+      aria-label="Fermer l'aperçu"
+    >
+      ✕
+    </button>
+  </div>
+</div>
+<hr>

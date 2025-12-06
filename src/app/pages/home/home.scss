@@ -16,7 +16,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 10px;
+  padding-left: 5rem;
 }
 
 .hero-content {
@@ -54,6 +54,6 @@ h1 {
 
   .hero-content {
     width: 100%;
-    padding: 1rem 2rem;
+    padding: 1rem 0;
   }
 }

@@ -1,43 +1,5 @@
-:root {
-  /* ...existing variables... */
-}
-
-/* make the app layout a column and force the page content to grow */
 .main {
-  height: 100vh;          /* full viewport height */
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
-
-/* ensure the routed page fills remaining space so footer is pushed to bottom */
-
-:root {
-  /* ...existing variables... */
-}
-
-/* reset utile */
-html, body { height: 100%; margin: 0; }
-*, *::before, *::after { box-sizing: border-box; }
-
-/* make the app layout a column and force the page content to grow */
-.main {
-  height: 100vh;          /* full viewport height */
-  display: flex;
-  flex-direction: column;
-}
-
-/* ...existing code... */
-
-/* header/footer ne grandissent pas ; la page routée prend l'espace restant */
-header, footer {
-  flex: 0 0 auto;
-}
-
-/* conteneur de la route (ex: <router-outlet> wrapper) */
-.page, router-outlet, .content {
-  flex: 1 1 auto;   /* prend l'espace restant */
-  min-height: 0;    /* crucial : permet au flex child de réduire et d'avoir overflow correct */
-  overflow: auto;   /* scroll uniquement à l'intérieur si besoin */
-}
-
-/* ...existing code... */

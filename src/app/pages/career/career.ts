@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-career',
@@ -7,5 +8,23 @@ import { Component } from '@angular/core';
   styleUrl: './career.scss',
 })
 export class Career {
+  currentLang: 'fr' | 'en' = 'fr';
+  safeCvSrc!: SafeResourceUrl;
 
+  constructor(private sanitizer: DomSanitizer) {
+    this.updateSafeSrc();
+  }
+
+  private get cvPath(): string {
+    return this.currentLang === 'fr' ? 'assets/cv/cv.pdf' : 'assets/cv/cv2.pdf';
+  }
+
+  private updateSafeSrc() {
+    this.safeCvSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.cvPath);
+  }
+
+  toggleLang() {
+    this.currentLang = this.currentLang === 'fr' ? 'en' : 'fr';
+    this.updateSafeSrc();
+  }
 }

@@ -1,6 +1,6 @@
 footer {
-    background: #f8f8f8;
-    border-top: 1px solid #e0e0e0;
+    background: var(--footer-background);
+    border-top: 1px solid var(--footer-border);
     font-size: 0.875rem;
     padding: 1rem;
     box-sizing: border-box;

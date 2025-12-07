@@ -1,3 +1,6 @@
+.activities-page {
+    min-height: 80vh;
+}
 .activities-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -30,12 +33,12 @@
     position: absolute;
     left: 1rem;
     bottom: 1rem;
-    color: #fff;
+    color: var(--image-title);
     font-size: 1.125rem;
     padding: 0.35rem 0.6rem;
     border-radius: 0.35rem;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--background-image-title);
 }
 
 @media (max-width: 1000px) and (min-width: 761px) {

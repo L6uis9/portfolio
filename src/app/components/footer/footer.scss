@@ -32,7 +32,7 @@ footer {
     a {
         display: flex;
         gap: 0.5rem;
-        color: #000;
+        color: var(--footer-link);
         text-decoration: none;
     }
 
@@ -49,6 +49,6 @@ footer {
 .credits {
     text-align: center;
     font-size: 0.75rem;
-    color: #888;
+    color: var(--font-color-credits);
     margin-top: 0.5rem;
 }

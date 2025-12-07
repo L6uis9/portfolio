@@ -1,3 +1,135 @@
-.engineering-page{
-    min-height: 80vh;
+.engineering-page {
+  min-height: 80vh;
+  padding: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
+  transform: translateX(-50%);
+  border-radius: 4px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+.timeline-item:not(:last-child) {
+    margin-bottom: -15rem;
+}
+
+
+.timeline-point {
+  position: absolute;
+  left: 50%;
+  top: 2rem;
+  transform: translate(-50%, -2px);
+  width: 16px;
+  height: 16px;
+  background: var(--timeline-point-bg);
+  border: 3px solid var(--timeline-point-border);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--timeline-point-shadow);
+  z-index: 3;
+}
+
+.timeline-content {
+  width: 45%;
+}
+
+.semester-rect {
+  background: var(--background-semester-rect);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--semester-rect-border);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px var(--semester-rect-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.semester-rect:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px var(--semester-rect-hover);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-left: calc(50% + 30px);
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-right: calc(50% + 30px);
+  margin-left: 0;
+}
+
+.semester-rect h3 {
+  margin: 0 0 10px;
+  color: var(--font-color-h3);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.semester-rect ul {
+  margin: 6px 0 0 0;
+  padding-left: 1.1rem;
+  list-style-position: inside;
+}
+
+.muted {
+  margin: 12px 0 6px;
+  color: var(--course-color);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-line{
+    left: 6px;
+    transform: none;
+  }
+
+  .timeline-point {
+    left: 0;
+    transform: none;
+  }
+
+  .timeline-content {
+    width: calc(100% - 2rem);
+    
+    margin-right: 0 !important;
+    margin-left: 2rem !important;
+  }
+
+  .timeline-item:not(:last-child) {
+    margin-bottom: 4rem;
+  }
 }

@@ -1,1 +1,28 @@
-<p>engineering works!</p>
+<!-- ...existing code... -->
+<div class="engineering-page">
+  <h1>Engineering Courses and Projects</h1>
+
+  <div class="timeline">
+    <div class="timeline-line" aria-hidden="true"></div>
+
+    <div *ngFor="let s of semesters; let i = index" class="timeline-item">
+      <div class="timeline-point" aria-hidden="true"></div>
+
+      <div class="timeline-content">
+        <div class="semester-rect">
+          <h3>{{ s.term }}</h3>
+
+          <p class="muted"><strong>Courses</strong></p>
+          <ul>
+            <li *ngFor="let c of s.courses">{{ c }}</li>
+          </ul>
+
+          <p class="muted"><strong>Projects</strong></p>
+          <ul>
+            <li *ngFor="let p of s.projects">{{ p }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

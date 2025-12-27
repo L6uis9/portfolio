@@ -16,7 +16,7 @@ export class Career {
   }
 
   private get cvPath(): string {
-    return this.currentLang === 'fr' ? 'assets/cv/cv.pdf' : 'assets/cv/cv2.pdf';
+    return this.currentLang === 'fr' ? 'assets/cv/cv-fr.pdf' : 'assets/cv/cv-en.pdf';
   }
 
   private updateSafeSrc() {

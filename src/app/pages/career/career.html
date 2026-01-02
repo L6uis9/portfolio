@@ -2,26 +2,39 @@
   <h1>Career Development</h1>
 
   <div class="career-grid">
-    <div class="cv">
-      <div class="header">
-        <h2>My CV</h2>
-        <button type="button" (click)="toggleLang()">
-          {{ currentLang === 'fr' ? 'Switch to English' : 'Switch to French' }}
-        </button>
-      </div>
+    <div class="spacer left">
+      <div class="cv">
+        <div class="header">
+          <h2>My CV</h2>
+          <button type="button" (click)="toggleLang()">
+            {{ currentLang === 'fr' ? 'Switch to English' : 'Switch to French' }}
+          </button>
+        </div>
 
-      <div class="cv-viewer">
-        <iframe [src]="safeCvSrc" frameborder="0" title="CV viewer"></iframe>
+        <div class="cv-viewer">
+          <iframe [src]="safeCvSrc" frameborder="0" title="CV viewer"></iframe>
+        </div>
       </div>
     </div>
 
-    <div class="video">
-      <div class="header">
-        <h2>Presentation Video</h2>
+    <div class ="spacer right">
+      <div class="video">
+        <div class="header">
+          <h2>Presentation Video</h2>
+        </div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/fiVXHPm5vDI" frameborder="0" allowfullscreen title="Presentation"></iframe>
+        </div>
       </div>
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/fiVXHPm5vDI" frameborder="0" allowfullscreen title="Presentation"></iframe>
+      <div class="ppp"> 
+        <div class="header">
+          <h2>PPP Slides</h2>
+        </div>
+        <div class="ppp-viewer">
+          <iframe [src]="safePppSrc" frameborder="0" title="PPP viewer"></iframe>
+        </div>
       </div>
     </div>
+
   </div>
 </div>

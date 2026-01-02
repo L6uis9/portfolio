@@ -10,6 +10,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class Career {
   currentLang: 'fr' | 'en' = 'fr';
   safeCvSrc!: SafeResourceUrl;
+  safePppSrc!: SafeResourceUrl;
 
   constructor(private sanitizer: DomSanitizer) {
     this.updateSafeSrc();
@@ -19,8 +20,13 @@ export class Career {
     return this.currentLang === 'fr' ? 'assets/cv/cv-fr.pdf' : 'assets/cv/cv-en.pdf';
   }
 
+  private get pppPath(): string {
+    return 'assets/cv/ppp.pdf';
+  }
+
   private updateSafeSrc() {
     this.safeCvSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.cvPath);
+    this.safePppSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.pppPath);
   }
 
   toggleLang() {
